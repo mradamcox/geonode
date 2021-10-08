@@ -732,6 +732,7 @@ class LayerResource(CommonModelApi):
                     formatted_obj['group_name'] = obj.group
 
             formatted_obj['keywords'] = [k.name for k in obj.keywords.all()] if obj.keywords else []
+            formatted_obj['tkeywords'] = [k.about for k in obj.tkeywords.all()] if obj.tkeywords else []
             formatted_obj['regions'] = [r.name for r in obj.regions.all()] if obj.regions else []
 
             # provide style information
@@ -888,6 +889,7 @@ class MapResource(CommonModelApi):
                     formatted_obj['group_name'] = obj.group
 
             formatted_obj['keywords'] = [k.name for k in obj.keywords.all()] if obj.keywords else []
+            formatted_obj['tkeywords'] = [k.about for k in obj.tkeywords.all()] if obj.tkeywords else []
             formatted_obj['regions'] = [r.name for r in obj.regions.all()] if obj.regions else []
 
             if 'site_url' not in formatted_obj or len(formatted_obj['site_url']) == 0:
@@ -969,6 +971,7 @@ class GeoAppResource(CommonModelApi):
                     formatted_obj['group_name'] = obj.group
 
             formatted_obj['keywords'] = [k.name for k in obj.keywords.all()] if obj.keywords else []
+            formatted_obj['tkeywords'] = [k.about for k in obj.tkeywords.all()] if obj.tkeywords else []
             formatted_obj['regions'] = [r.name for r in obj.regions.all()] if obj.regions else []
 
             if 'site_url' not in formatted_obj or len(formatted_obj['site_url']) == 0:
@@ -1036,6 +1039,7 @@ class DocumentResource(CommonModelApi):
                     formatted_obj['group_name'] = obj.group
 
             formatted_obj['keywords'] = [k.name for k in obj.keywords.all()] if obj.keywords else []
+            formatted_obj['tkeywords'] = [k.about for k in obj.tkeywords.all()] if obj.tkeywords else []
             formatted_obj['regions'] = [r.name for r in obj.regions.all()] if obj.regions else []
 
             if 'site_url' not in formatted_obj or len(formatted_obj['site_url']) == 0:
