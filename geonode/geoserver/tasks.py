@@ -335,8 +335,8 @@ def geoserver_post_save_layers(
     try:
         instance = Layer.objects.get(id=instance_id)
     except Layer.DoesNotExist:
-        logger.debug(f"Layer id {instance_id} does not exist yet!")
-        raise
+        logger.warn(f"Layer id {instance_id} does not exist yet!")
+        return
 
     lock_id = f'{self.request.id}'
     with AcquireLock(lock_id) as lock:

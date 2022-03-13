@@ -53,8 +53,8 @@ def create_document_thumbnail(self, object_id):
     try:
         document = Document.objects.get(id=object_id)
     except Document.DoesNotExist:
-        logger.error(f"Document #{object_id} does not exist.")
-        raise
+        logger.warn(f"Document #{object_id} does not exist.")
+        return
 
     image_path = None
     image_file = None
