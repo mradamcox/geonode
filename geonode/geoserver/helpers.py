@@ -358,7 +358,7 @@ def set_layer_style(saved_layer, title, sld, base_file=None):
                 gs_catalog.get_style(saved_layer.name)
             if not style:
                 style = gs_catalog.create_style(
-                    saved_layer.name, sld, overwrite=False, raw=True, workspace=saved_layer.workspace)
+                    saved_layer.name, sld, overwrite=True, raw=True, workspace=saved_layer.workspace)
         except Exception as e:
             logger.exception(e)
     else:
