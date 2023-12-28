@@ -11,7 +11,7 @@
         {% endif %}
         <h4><a href="{{ announcement.get_absolute_url }}">{{ announcement.title }}</a></h4>
         <p><small><em>{{ announcement.creation_date }}</em></small></p>
-        <div>{{ announcement.content }}</div>
+        <div>{{ announcement.content|safe }}</div>
     </div>
     {% endif %}
     {% endfor %}

@@ -390,7 +390,13 @@ def geoserver_post_save_layers(
                     charset=instance.charset
                 )
 
-            values, gs_resource = fetch_gs_resource(instance, values, _tries)
+            ## commenting out this line because it causes a listing operation
+            ## on the entire list of layers in Geoserver, and this becomes expensive
+            ## as the number of layers grows. SEEMS to have no ill-effect (limited testing)
+            ## EDIT 05-27-2022: now turning this line into an else statement, because commenting
+            ## it out causes thumbnail generation to fail (I think)
+            else:
+                values, gs_resource = fetch_gs_resource(instance, values, _tries)
             while not gs_resource and _tries < _max_tries:
                 values, gs_resource = fetch_gs_resource(instance, values, _tries)
                 _tries += 1

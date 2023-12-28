@@ -4,3 +4,8 @@ Disallow: /cgi-bin/
 Disallow: /api/
 Disallow: /static/
 Disallow: /uploaded/
+Disallow: /account/
+Disallow: /geoserver/
+Disallow: /social/
+Disallow: /catalogue/
+Disallow: /download/
